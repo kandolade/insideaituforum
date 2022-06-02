@@ -1,0 +1,19 @@
+.postAuth .form {
+  margin-top: 0px !important;
+}
+.postAuth form span {
+  visibility: hidden;
+}
+
+#addInput {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  height: max-content;
+}
+.postAuth #addInput input {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 80px;
+  height: 30px;
+}

@@ -1,0 +1,20 @@
+.wrapper4 {
+  list-style: none;
+  width: 350px;
+  padding-top: 30px;
+  line-height: 1.9;
+  height: 80%;
+  font-size: 15px;
+}
+
+.recommendResponsive {
+  /* width: 10px;
+  overflow: hidden;
+  height: 30px; */
+}
+
+@media (max-width: 500px) {
+  .recommendResponsive {
+    display: block !important;
+  }
+}

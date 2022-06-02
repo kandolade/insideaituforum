@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/css/admin.css">
+{{> adminSidebar}}
+
+<div class="main d-flex">
+    <div class="admin-block">
+        <div class="sectionHeader">
+            <h1 style="color: #ffffff;">Hi, {{user.name}}!
+            </h1>
+        </div>
+        <div class="container admin-forms">
+
+            <div class="sectionLayout">
+
+                <div class="profile">
+                    <div class="profileAvatar">
+                      <h2 style="color: white;border-color: transparent; margin: 0 ">Your Photo:</h2>
+                        <div class="avatarInFrame">
+
+            <form action="/admin/profile/addPhoto" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <img src="{{user.imageUrl}}" alt="image">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="image" id="image">
+                </div>
+                <div class="form-group">
+                    <button style="background-color: #F9A825FF" type="submit">Save</button>
+                </div>
+            </form>
+                </div>
+                </div>
+                </div>
+                <div class="characters">
+                    <div class="containerForm">
+        <div class="con">
+            <form action="/admin/profile" method="POST">
+                <div class="form-group">
+                    <label style="color: #d7d7d7">Email</label>
+                    <strong style="display: flex; justify-content: space-between; color: #f9a825">
+                        <p>{{user.email}}</p>
+                        {{#if successMessage}}
+                        <p class="success">{{successMessage}}</p>
+                        {{/if}}
+                    </strong>
+                </div>
+                <div class="form-group">
+                    <label style="color: #d7d7d7">Username:</label>
+                    <input style="color: white; background-color: #3E3E3EFF; border-color: transparent;border-bottom: 1px solid #f9a825;" name="name" value="{{user.name}}" type=" text">
+                </div>
+                <div class="form-group">
+                    <label style="color: #d7d7d7">Barcode:</label>
+                    <input style="color: white; background-color: #3E3E3EFF; border-color: transparent;border-bottom: 1px solid #f9a825;" placeholder="*If you study at the AITU" name="mobile" value="{{user.mobile}}" type="text">
+                </div>
+                <div class="form-group">
+                    <label style="color: #d7d7d7">City:</label>
+                    <input placeholder="Enter Your city" style="color: white; background-color: #3E3E3EFF; border-color: transparent;border-bottom: 1px solid #f9a825;"  name="location" value="{{user.location}}" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label style="color: #d7d7d7">Something about you:</label>
+                    <input style="color: white; background-color: #3E3E3EFF; border-color: transparent;border-bottom: 1px solid #f9a825;" name="language" value="{{user.language}}" type="text">
+                </div>
+                <div class="form-group">
+                    <button style="background-color: #F9A825FF" type="submit">Save</button>
+                </div>
+            </form>
+</div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <a href="/profiles">
+            <li class="nav-item">
+                <button style="background-color: #3e3e3e" class="nav-link" type="submit">User Manager</button>
+            </li>
+        </a>
+    </div>
+
+</div>

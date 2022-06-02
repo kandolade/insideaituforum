@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/Post.css">
+<div class="main d-flex">
+    {{> sidebar-tag}}
+    <div class="bg-white container3">
+        <div class="wrapperDiv3">
+            <div class="adminPosts">
+                <div class="ask">
+                    <p> <a href="/admin/add">Ask Your Question</a></p>
+                </div>
+                {{#if posts}}
+                {{#each posts}}
+                <div class="post">
+                    <div style="display: flex; flex-direction: column;" class="profile-pic">
+                        <img src="{{this.userImage}}" alt="user">
+                        <a style="color: black;" href="/public/profile/{{this.user}}">
+                            <p class="title">{{this.author}}</p>
+                        </a>
+
+                    </div>
+                    <div class="post-title">
+                        <a style="color: black; font-weight: bold;" href="/fullpost/{{this._id}}">
+                            <p>{{this.title}}</p>
+                        </a>
+                        <span id="test">{{{this.contentWithoutMarkup}}}</span>....<a
+                            href="/fullpost/{{this._id}}">more</a>
+                    </div>
+                    <div class="sokial" style="display: flex;">
+                        <p><i class="far fa-eye"></i> {{this.views}}</p>
+                        <p><i class="far fa-thumbs-up"></i>{{this.likes}}</p>
+                    </div>
+                </div>
+                <hr>
+                {{/each}}
+                {{else}}
+                <h2>No Posts Found</h2>
+                {{/if}}
+            </div>
+        </div>
+        {{> recommend}}
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="/css/ex.css">
+
+
+<div class="login-page">
+    <div class="login-form">
+        <div class="form-block">
+            <div class="form-group header">
+                <h2 style="font-weight: bolder; color: white">Hi, please Login</h2>
+            </div>
+            <form id="loginForm" action="/login" method="POST">
+                {{#if errorMessage}}
+                <div class="form-group">
+                    <p class="error">{{errorMessage}}</p>
+                </div>
+                {{/if}}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input style="color: white; background-color: #121212 " placeholder="youremail@gmail.com" name="email" id="loginEmail" type="email">
+                    <span id="login-email-error">Message</span>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input style="color: white; background-color: #121212 " placeholder="Enter password" name="password" id="loginPassword" type="password">
+                    <span id="login-password-error">Message</span>
+                </div>
+                <div class="form-group button submit-button">
+                    <button id="3" type="submit">Start</button>
+                </div>
+                <div class="form-group ">
+                    <p style="color: grey; text-align: center;">No account yet? <strong><a style="color: white"
+                                href="/signup">Register</a></strong></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/validate/validators.js"></script>
+<script src="/js/validate/login.js"></script>

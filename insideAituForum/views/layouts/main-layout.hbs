@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{pageTitle}}</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../images/logo.jpeg">
+
+  <link rel="stylesheet" href="/css/main.css">
+
+
+</head>
+
+<body onload="lastVisit()" style="background-color: #121212">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 nav">
+                <div class="col-8 nav_link">
+                    <div class="row justify-content-start">
+                        <div class="col-auto">
+                            <a href="/index" id="nav_link_left">THE GAME</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="/" class="nav_link">THE FORUM</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="/wiki" class="nav_link">THE WIKI</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 nav_login">
+                    <div class="row justify-content-end">
+
+                            {{#if isAuthenticated }}
+                                <div class="col-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="/admin/profile"><i class="fas fa-user"></i></a>
+                                    </li>
+                                </div>
+                            <div class="col-auto">
+                            {{else}}
+                                <div class="col-auto">
+                                    <a href="/login" id="nav_login_right"  data-bs-whatever="@getbootstrap" >LOGIN</a>
+                                </div>
+                            {{/if}}
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div>
+    {{> transitionMenu}}
+</div>
+</div>
+{{{body}}}
+<div style="margin: 50px">
+
+</div>
+<footer  class="icon_bottom_text1">
+    <div  class="container">
+        <div style="bottom: 0;" class="row container_footer">
+            <div class="col-xl-10 col-sm-12 justify-content-center">
+                <h3 style="color: #ffffff;" class="text1__1" >For contact:</h3>
+                <h3 style="color: #ffffff" class="text1__2">insideaitu@gmail.com</h3>
+            </div>
+            <div class="col-xl-2 justify-content-end col-sm-12 justify-content-center  bottom_logo">
+                <img class="bottom_logo_size" id="musicSpan" src="../images/logo.jpeg">
+            </div>
+        </div>
+        <div class="row social_media">
+            <div class="col-xl-auto col-sm-12 justify-content-center text_bottom2">
+                <p style="font-family: 'Clash Display Variable'">Where to find us</p>
+            </div>
+            <div class="col-auto container__photo">
+                <a href="https://t.me/+lYbr7KEq0ghjMDVi"> <img class="container__picture__logo" src="../images/telegram-icon.jpeg"  alt=""> </a>
+            </div>
+            <div class="col-auto container__photo">
+                <a href="https://discord.gg/3EkHUug8">  <img class="container__picture__logo" src="../images/discord_icon.jpeg" alt="" height="30"> </a>
+            </div>
+            <div class="col-auto container__photo">
+                <a href="https://www.youtube.com/watch?v=mgxDyrEnnoE&ab_channel=WarnerBros.JapanAnime">   <img class="container__picture__logo" src="../images/youtube-logo.jpeg" alt="" height="30"> </a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 last_bottom_text">
+                <p style="font-family: 'Clash Display Variable'" >The rights are not predisposed to a legal or natural person. However, please do not copy the idea or code.<br> If you want to continue the project, please email.</br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="/js/flickity.pkgd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script defer src="/js/main.js"></script>
+
+
+</html>

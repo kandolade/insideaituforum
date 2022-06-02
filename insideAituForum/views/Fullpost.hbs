@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="/css/Post.css">
+<script>
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    function lastVisit(){
+        if(getCookie('year')!=="") {
+            let lastYear = getCookie('year');
+            let lastDen = getCookie('den');
+            let lastMonth = getCookie('month');
+
+            let answer = ( lastDen + "." + lastMonth  + "." + lastYear);
+            document.getElementById('answer').innerHTML = answer
+        }
+
+    else{
+            let date = new Date();
+            let year = date.getFullYear();
+            let day = date.getDay();
+            let month = (date.getMonth()+1);
+            let den = date.getDate();
+            document.cookie = `year=${year}`;
+            document.cookie = `day=${day}`;
+            document.cookie = `den=${den}`;
+            document.cookie = `month=${month}`;
+
+        }
+    }
+</script>
+<div class="main d-flex">
+    {{> sidebar}}
+    <div class=" container">
+        <div class="wrapperDiv2">
+
+            <div style="padding-left: 15px;padding-right: 15px" class="row features">
+                <div style="width:74.5%; height: 100%;  background:#3E3E3E; border-radius: 3px" data-filter="story">
+
+                <div class="fullpost-group">
+                    <h2 style="font-weight: bold; color: white">{{post.title}}</h2>
+                </div>
+
+                <div class="fullpost-info" style="display: flex; justify-content: space-between;">
+                    <div style="padding-left: 10px;color: #cecece;" class="fullpost-group flex">
+                        <a style="color: #cecece;" href="/public/profile/{{post.user}}">
+                            <p style="font-weight: bold;">Author: {{post.author}}</p>
+                        </a>
+                        <p>Category: {{post.category}}</p>
+                        <p>Views:  {{post.views}}</p>
+                        <a style="color: #cecece;" href="social/like/{{post._id}}">
+                            <p>Likes: {{post.likes}}</p>
+                        </a>
+
+                    </div>
+                    <div style="padding-right: 15px">
+                        <img style="height: 40px; width: 40px; border-radius: 50%;" src="{{post.userImage}}"
+                            alt="image">
+                    </div>
+
+
+                </div>
+                    <div style="color: #cecece; padding-left: 10px">
+                        {{{post.date}}}
+                    </div>
+                <hr>
+                    <div style="color: #efefef; padding-left: 10px; padding-right: 10px">
+                          <div id="post-content" class="fullpost-group">
+                              {{{post.content}}}
+                         </div>
+                    </div>
+                    <div style="display: none;" id="toggleAnswerDiv">
+                        <form action="/admin/add/answer" id="add-post-form" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" value="as" name="hiddenMarkup" id="hiddenMarkup">
+                                <input type="hidden" value="{{post._id}}" name="postId">
+                                <div id="toolbar">
+                                    <button type="button" id="bold" onclick="makeBold()">
+                                        <i class="fas fa-bold"></i></button>
+                                    <button type="button" id="increase" onclick="dopp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button type="button" id="decrease" onclick="dop2()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="editor" contenteditable="true"></div>
+                            </div>
+                            <div style="padding-left: 10px" class="form-group">
+                                <button style="background-color: #f9a825" type="submit">Save </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div style="padding-left: 10px">
+                        <hr>
+                        <div style="width: 250px;background-color: #f9a825" class="add-answer">
+                            <button id="toggleAnswer" type="button">Post Your Answer</button>
+                        </div>
+                        <p style="margin-top: 20px;color: #f9a825; font-size: 24px; font-weight: bold; padding-left: 10px">Answers</p>
+                        <hr>
+                        {{#each answers}}
+                            <div class="post-answer" style="display: flex; justify-content: start;">
+                                <div style="display: flex; flex-direction: column; margin-right: 20px;">
+
+                                    <img style="height: 40px; width: 40px; border-radius: 50%;" src="{{this.userImage}}"
+                                         alt="image">
+
+                                    <p style="color: #dedede">{{this.author}}</p>
+
+                                </div>
+
+                                <div style="color: white">
+                                    {{{this.content}}}
+                                    <p style="color: #b2b2b2">{{{this.date}}}</p>
+
+                                </div>
+                            </div>
+                            <hr>
+                        {{/each}}
+                    </div>
+
+
+
+                </div>
+
+                <div style="background-color: #f9a825;margin: 0; height: 100%; text-align: left; padding-top: 0" class=" rectangle__top" data-filter="news">
+                    <div style="font-weight: bold;font-family: 'Satoshi Variable'; margin-left: 5px; color: #171717" class="title_inside_in_dev">
+                        {{> recommend}}
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="padding-left: 15px;padding-right: 15px;padding-bottom: 50px" class="row features">
+                <div style="width:74.5%; height: 100%;  background:#3E3E3E; border-radius: 3px" data-filter="story">
+
+            <div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="/js/validate/validators.js"></script>
+<script src="/js/validate/addPost.js"></script>
+<script src="/js/rich/rich.js"></script>

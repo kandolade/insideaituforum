@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/Post.css">
+{{> adminSidebar}}
+<div class="container">
+    <div style="background-color: #3E3E3E; border-radius: 2px">
+    <h2 style="color: white; margin-top: 20px;font-family: 'Satoshi Variable'">Something soon...</h2>
+</div>
+    <div class="main d-flex">
+    <div style="background-color: #121212" class="container">
+        <div class="adminPosts">
+            {{#if posts}}
+            <hr style="background-color: #f9a825">
+            {{#each posts}}
+            <div class="post">
+                <p style="color: white; font-family: 'Satoshi Variable'" class="title">{{this.author}} :</p>
+                <a href="/fullpost/{{this._id}}">
+                    <p style="color: #cecece">Post:</p> <p style="color: #f9a825">{{this.title}}</p>  <a href="edit/{{this._id}}"><i style="color:#F9A825FF; font-family: 'Satoshi Variable' " class="fas">-Click(добавь сюда потом значок редактирования)</i>
+                </a>
+                </a>
+            </div>
+                <hr style="background-color: #f9a825">
+            {{/each}}
+            {{else}}
+            <h2 style="color: red">No Posts Found</h2>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</div>

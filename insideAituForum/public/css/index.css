@@ -1,0 +1,645 @@
+body
+{
+    margin: 0;
+    background-color: black;
+}
+*,*:after,*:before
+{
+    box-sizing: border-box;
+}
+.h1,h2,h3,h4,h5,h6
+{
+    margin: 0;
+}
+.intro
+{
+    width: 100%;
+    max-width: 1920px;
+    max-height: 770px;
+    height: 100vh;
+    background: url("../images/main__background.png") center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+.intro__title
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: 300px auto 200px;
+    display: flex;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.8s ease-in-out 1s;
+}
+.intro__title._anim
+{
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.8s ease-in-out 0.2s;
+}
+.content_img{
+    background-image: url("../images/backzindex1.svg");
+    background-repeat: repeat;
+    position: fixed;
+    background-size: 4px 4px;
+    width: 100%;
+    height: 100%;
+    opacity: 15%;
+    z-index: 4;
+    pointer-events: none;
+}
+.play__button
+{
+    display: flex;
+    max-width: 1260px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: right;
+
+}
+.playb
+{
+    height: 50px;
+    max-width: 240px;
+    width: 100%;
+    background: url("../images/play__now.png");
+    background-color: #f9a825;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+}
+.my_container
+{
+    width: 100%;
+    max-width: 1300px;
+    padding-top: 40px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+}
+
+.header
+{
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.header__logo
+{
+    height: 100px;
+    max-width: 100px;
+    width: 100%;
+    background: url("../images/logo.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+}
+.header__inner
+{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.telegram__logo
+{
+    height: 70px;
+    width: 100%;
+    background: url("../images/telegram__logo.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    max-width: 70px;
+    margin: 0;
+    align-items: center;
+    cursor: pointer;
+}
+.nav
+{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #f9a825;
+    justify-content: center;
+}
+.nav-link
+{
+    text-decoration: none;
+    font-family: 'Satoshi', sans-serif;
+    color: #f9a825;
+    transition: color .2s linear;
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+
+}
+.nav-item
+{
+    padding-top: 20px;
+}
+.nav-link:hover
+{
+    color: #FFFFFF;
+    opacity: 1;
+}
+.nav-link:focus
+{
+    color: #FFFFFF;
+}
+.first__section
+{
+    width: 100%;
+    max-width: 1920px;
+    max-height: 770px;
+    height: 100vh;
+    background-color: #f9a825;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+.orange__container
+{
+    width: 100%;
+    max-width: 600px;
+    padding-top: 50px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+}
+.section__container
+{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.text__container
+{
+    padding-top: 70px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 45px;
+    line-height: 60px;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 3px black;
+
+}
+.img__container
+{
+    width: 100%;
+    max-width: 600px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.flash__container
+{
+    width: 100%;
+    max-width: 200px;
+    max-height: 350px;
+    height: 100%;
+    padding-top: 80px;
+    display: flex;
+}
+.text2__container
+{
+    width: 100%;
+    max-width: 1400px;
+    justify-content: right;
+}
+.container2
+{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+
+    color: #FFFFFF;
+}
+.break
+{
+    flex-basis: 100%;
+    height: 0;
+}
+.section2
+{
+    width: 100%;
+    max-width: 1920px;
+    max-height: 770px;
+    height: 100vh;
+    background-color: black;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+}
+.video
+{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    margin: 0 auto;
+}
+.section3
+{
+    width: 100%;
+    max-width: 1920px;
+    height:1400px;
+    background:  url("../images/insideaitutalksbackground.png") center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+.section3__main
+{
+    padding-top: 50px;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+}
+.section3__secondary
+{
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+}
+.section3__logo__text
+{
+    max-width: 600px;
+    width: 100%;
+    font-family: 'Clash Display', sans-serif;
+    color: #FFFFFF;
+    font-size: 100px;
+    padding-top: 50px;
+    display: flex;
+}
+
+.section3__logo__img
+{
+    margin: 40px auto 0;
+    max-height: 210px;
+    height: 100%;
+    max-width: 420px;
+    width: 100%;
+    background: url("../images/talks.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.section3__logo__img__text
+{
+    padding-top: 15px;
+    max-width: 220px;
+    width: 100%;
+    font-family: 'Clash Display', sans-serif;
+    color: #FFFFFF;
+    font-size: 95px;
+    margin: 0 auto;
+}
+
+.blue__talks__container
+{
+    width: 100%;
+    height: 400px;
+    background-color:#24C5F9;
+    margin-top: 60px;
+    padding-top: 1px;
+    justify-content: center;
+    transition:color .2s linear;
+}
+.blue__talks__container:hover
+{
+    opacity: 0.6;
+}
+
+.talks__main__container
+{
+    width: 100%;
+    height: 400px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+.talks__def__containers
+{
+    width:340px;
+    height: 190px;
+    background-color: #D3DFE3;
+    justify-content: center;
+    transition:color .2s linear;
+    margin-top: 20px;
+
+}
+.talks__def__containers:hover
+{
+    opacity: 0.6;
+}
+
+.talks__def__containers__down
+{
+    max-width: 320px;
+    width: 340px;
+    height: 190px;
+    background-color: #D3DFE3;
+    margin-top: 20px;
+    justify-content: center;
+    transition:color .2s linear;
+
+}
+.talks__def__containers__down:hover
+{
+    opacity: 0.6;
+}
+.talks__top__text
+{
+    max-width: 290px;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 16px;
+    margin: 20px 20px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+.talks__center__text
+{
+    max-width: 290px;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 22px;
+    margin:20px 20px;
+}
+.section4
+{
+    width: 100%;
+    max-width: 1920px;
+    background-color: #323336;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 1000px;
+    background-size: auto;
+}
+.section5
+{
+    width: 100%;
+    max-width: 1920px;
+    background-color: #323336;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 850px;
+    background-size: auto;
+}
+.section4__main
+{
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.section4__main__text
+{
+    width: 100%;
+    max-width: 1080px;
+    font-family: 'Clash Display', sans-serif;
+    color: #F9A825;
+    font-size: 85px;
+    text-shadow: 2px 2px black, -2px 2px yellow;
+    margin: 55px 0;
+}
+.section4__main__img
+{
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+.section4__lev__strelka
+{
+    max-width: 100px;
+    width: 100%;
+    margin: 200px 0;
+}
+.section4__main__back
+{
+    max-width: 1080px;
+    width: 100%;
+    margin:0 10px ;
+}
+.section4__prav__strelka
+{
+    max-width: 100px;
+    width: 100%;
+    margin: 200px 0;
+}
+.bottom_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    width: 100%;
+    max-width: 1920px;
+    height: 470px;
+    background-color: #000000;
+    background-size: auto;
+    margin: 0 auto;
+}
+
+.intro__down{
+    display: flex;
+    width: 100%;
+    height: 474px;
+    background-size: auto;
+    background-color: #000000;
+}
+
+.icon_bottom_text1{
+    background-color: black;
+    padding-top: 50px;
+    margin-top: 50px;
+}
+.bottom_text1{
+    justify-content: space-between;
+    align-items: center;
+}
+.container_footer {
+    font-family: "Clash Display Variable";
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid white;
+}
+.text1__1{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.text1__2{
+    font-size: 44px;
+    font-weight: 700;    color: white;
+
+
+}
+.bottom_logo{
+    display: flex;
+    justify-content: right;
+}
+.bottom_logo_size{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+.social_media{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0 25px 0;
+}
+.container__photo{
+    margin-left: 25px;
+}
+.social_icons{
+    display: flex;
+    justify-content: space-between;
+}
+.text_bottom2{
+    display: flex;
+    color: white;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 25px;
+}
+.last_bottom_text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 11px;
+    margin-top: 25px;
+}
+.container__picture__logo{
+    height: 30px;
+}
+.rectangle__down {
+    display: flex;
+    margin: 64px 0;
+    width: 1170px;
+    height: 45px;
+    background: #3E3E3E;
+    justify-content: center;
+}
+.container__photo
+{
+    margin: 10px 15px;
+}
+.fixed
+{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: black;
+    transition: all 0.2s ease-in-out 0.2s;
+    transform: translateY(20%);
+}
+.cont
+{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.cont.talks_animation
+{
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.contXR
+{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.contXR._anim_xR
+{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.contXL
+{
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.contXL._anim_xL
+{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.butt_animation
+{
+    position: absolute;
+    background-color: inherit;
+    filter: invert(100%);
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    border-radius: 2px;
+    animation: animate 1s linear infinite;
+}
+.container{
+    max-width: 1100px;
+}
+@keyframes animate
+{
+    0%
+    {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100%
+    {
+        width: 700px;
+        height: 700px;
+        opacity: 0;
+    }
+}
+.butt
+{
+    overflow: hidden;
+}
+@media only screen and (max-width: 553px) {
+    .text1__1 {
+        display: none;
+    }
+
+    .text1__2 {
+        display: none;
+    }
+}

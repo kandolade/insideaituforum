@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="/css/admin.css">
+<div class="main d-flex">
+    {{> sidebar}}
+    <div class="container">
+        <div>
+            <div  style="background-color: #3e3e3e; border-radius: 2px; padding: 50px" class=" public-block">
+                <div class="">
+                    <div class="now" style="justify-content: center">
+                    <div  class="form-group">
+                        <img style="border-radius: 50%" src="{{user.imageUrl}}" alt="image">
+                    </div>
+                    <div class="form-group">
+                        <strong style="display: flex; justify-content: space-between;">
+                            {{#if successMessage}}
+                            <p class="success">{{successMessage}}</p>
+                            {{/if}}
+                        </strong>
+                    </div>
+
+                    <div style="color: #dcdcdc " class="form-group">
+                        <strong style="display: flex; justify-content: space-between;">
+                            <p >{{user.name}}</p>
+                        </strong>
+                    </div>
+
+                        <div>
+                            <div style="background-color: #777777" class="jumbotron">
+                                <h1 style="color: #121212; font-family: 'Satoshi Variable'; font-weight: bold" class = "display-4">Private Chat with {{user.name}}<br> <h1 style="color: #FF9900">(In Development)</h1></h1>
+                                <br/>
+                                <textarea id = "message" type="text" class="form-control" placeholder="Message"></textarea>
+
+                                <br/>
+                                <input style="background-color: #FF9900; border-color: #FF9900" type="submit"  class = "btn btn-success" placeholder="Send" />
+                            </div>
+                            <div id = "messages">
+
+                            </div>
+                        </div>
+                        <script>
+
+                            var socket = io();
+                            $(()=>{
+                                $('.btn').click(()=>{
+                                    const message = {name : $('#name').val() ,message: $('#message').val()};
+                                    postMessage(message);
+                                })
+                                getMessages();
+                            })
+                            socket.on('message',addMessageRealTime)
+                            function addMessage(message){
+                                $('#messages').append(`<br/><h4> ${message.name} </h4><p>${message.message}</p>`)
+                            }
+                            function addMessageRealTime(message){
+                                $('#messages').prepend(`<br/><h4> ${message.name} </h4><p>${message.message}</p>`)
+                            }
+                            function getMessages(){
+                                $.get("http://localhost:3000/messages",data=>{
+                                    console.log(data);
+                                    data.reverse().forEach(addMessage);
+                                })
+                            }
+                            function postMessage(message){
+                                $.post("http://localhost:3000/messages",message)
+                            }
+                        </script>
+
+                        </div>
+
+                    {{#if user.barcode}}
+                    <div class="form-group">
+                        <label>Mobile</label>
+                        <strong style="display: flex; justify-content: space-between;">
+                            <p>{{user.barcode}}</p>
+                        </strong>
+                    </div>
+                    {{/if}}
+
+                    {{#if user.city}}
+                    <div class="form-group">
+                        <label for="">Location</label>
+                        <strong style="display: flex; justify-content: space-between;">
+                            <p>{{user.city}}</p>
+                        </strong>
+                    </div>
+                    {{/if}}
+                    {{#if user.language}}
+                    <div class="form-group">
+                        <label>Langauge</label>
+                        <strong style="display: flex; justify-content: space-between;">
+                            <p>{{user.language}}</p>
+                        </strong>
+                    </div>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="bg-white container1  sidebar">
+    <div class="sidebar-wrapper" style="padding:40px; padding-top:20px; height: 100%;">
+        <div class="sidebar-category-tab">
+            <li style="font-weight: bold; color: black;">Tags</li>
+            {{#each tags}}
+            <li>#<a href="/tags/{{this}}" class="{{#if active.home}}active{{/if}}">{{this}}</a></li>
+            {{/each}}
+        </div>
+    </div>
+</div>

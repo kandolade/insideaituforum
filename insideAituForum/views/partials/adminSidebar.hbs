@@ -1,0 +1,36 @@
+
+<div style="font-family: 'Satoshi Variable';" class="container">
+    <div style="padding-left: 15px;padding-right: 15px;" class="row features">
+
+        <div class=" rectangle__top" data-filter="news">
+            <div class="rectangle__inside "></div>
+            <a href="/admin/posts" class="title_inside {{#if active.myposts}}active{{/if}}">
+                <h4 style="color: white">Your Posts</h4>
+            </a>
+        </div>
+        <div class="rectangle__top " data-filter="story">
+            <div class="rectangle__inside"></div>
+            <a href="/admin/add" class="title_inside {{#if active.add}}active{{/if}}">
+                <h4 style="color: white">Add Post</h4>
+            </a>
+        </div>
+        <div class=" rectangle__top " data-filter="hacks">
+            <div class="rectangle__inside"></div>
+            <a href="#" class="title_inside {{#if active.follow}}active{{/if}}">
+                <h4 style="color: white">Test</h4>
+            </a>
+        </div>
+        <div  class=" rectangle__top" data-filter="all">
+            <div class="rectangle__inside"></div>
+            <a href="/admin/profile" class="title_inside {{#if active.profile}}active{{/if}}">
+                <h4 style="color: white">Profile</h4>
+            </a>
+        </div>
+    </div>
+    <form action="/logout" method="GET">
+        <li class="nav-item">
+            <button style="background-color: #3e3e3e" class="nav-link" type="submit">Logout</button>
+        </li>
+    </form>
+
+</div>

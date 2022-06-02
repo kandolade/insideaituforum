@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/postAuth.css">
+<link rel="stylesheet" href="/css/ex.css">
+<link rel="stylesheet" href="/css/Post.css">
+
+<div class="main d-flex">
+    {{> adminSidebar}}
+    <div class="bg-white container3 px-3 py-1">
+        <div class="postAuth">
+            <form action="/admin/add/answer" id="add-post-form" method="POST">
+                <div class="form-group">
+                    <input type="hidden" value="as" name="hiddenMarkup" id="hiddenMarkup">
+                    <input type="hidden" value="{{postId}}" name="postId">
+                    <div id="toolbar">
+                        <button type="button" id="bold" onclick="makeBold()">
+                            <i class="fas fa-bold"></i></button>
+                        <button type="button" id="italic" onclick="makeItalic()">
+                            <i class="fas fa-italic"></i>
+                        </button>
+
+                        <button type="button" id="increase" onclick="dopp()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button type="button" id="decrease" onclick="dop2()">
+                            <i class="fas fa-minus"></i>
+                        </button>
+
+                        <button type="button" onclick="justifyLeft()"><i class="fas fa-align-left"></i></button>
+                        <button type="button" onclick="justifyCenter()"><i class="fas fa-align-center"></i></button>
+                        <button type="button" onclick="justifyRight()"><i class="fas fa-align-right"></i></button>
+
+                        <button type="button" onclick="doAddImage()"><i class="far fa-images"></i></button>
+
+                        <button type="button" onclick="doSetTextColor()"><i class="fas fa-brush"></i></button>
+                    </div>
+                    <div id="editor" contenteditable="true"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Add Answer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/validate/validators.js"></script>
+<script src="/js/validate/addPost.js"></script>
+<script src="/js/rich/rich.js"></script>

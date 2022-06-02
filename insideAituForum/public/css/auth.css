@@ -1,0 +1,123 @@
+.signup-page {
+  margin: auto;
+  width: fit-content;
+  margin-top: 5px;
+  height: 74vh;
+}
+.login-page {
+  margin: auto;
+  width: fit-content;
+  margin-top: 40px;
+  /* height: 74vh; */
+  height: auto;
+}
+.signup-form,
+.login-form {
+  padding: 20px;
+  border-radius: 5px;
+  width: 420px;
+  height: auto;
+}
+
+.error {
+  color: #fff;
+  background: rgb(248, 82, 82);
+  border-radius: 3px;
+  text-align: center;
+}
+.form-block {
+  width: 100%;
+}
+/* .form-group label::after {
+  content: "*";
+  color: red;
+} */
+.form-block input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #f9a825;
+  font-weight: bolder;
+}
+.form-block label {
+  color: grey;
+  font-size: small;
+  margin-bottom: 0;
+}
+.form-block input:focus {
+  outline: none;
+}
+.form-group {
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+input {
+  display: block;
+}
+.button {
+  text-align: center;
+}
+.signup-page .social-login a,
+.login-page .social-login a {
+  padding: 5px;
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+}
+.form-group button {
+  border: 2px solid black;
+  border-radius: 3px;
+  color: #333;
+  padding: 7px;
+  font-weight: bolder;
+}
+
+.form-group button:hover {
+  background: #000;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+}
+.form-block .submit-button button {
+  background: rgb(249, 168, 37);
+}
+.form-block .submit-button button:hover {
+  color: black;
+}
+
+.form-group .social-login {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.form-block .social-login > a {
+  flex: 0 40%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-block .header h2 {
+  text-align: center !important;
+  font-size: 2.3rem;
+}
+.h2{
+  color: white;
+}
+.form-block .login-forgot-pass {
+  text-align: left;
+  color: grey;
+  font-size: small;
+  margin-top: 5px;
+}
+@media (max-width: 500px) {
+  .signup-form,
+  .login-form {
+    width: 330px;
+  }
+  .form-block .social-login button {
+    padding: 3px;
+    font-size: 14px;
+  }
+  .login-page,
+  .signup-page {
+    margin-top: 5px !important;
+  }
+}

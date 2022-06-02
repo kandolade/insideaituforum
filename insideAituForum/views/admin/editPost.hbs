@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/postAuth.css">
+<link rel="stylesheet" href="/css/ex.css">
+<link rel="stylesheet" href="/css/Post.css">
+{{> adminSidebar}}
+
+<div class="main d-flex">
+    <div style="background-color: #121212; padding-top: 20px" class="container">
+        <div class="postAuth">
+            <form style="margin-top: 0px;" action="/admin/edit" id="add-post-form" method="POST">
+                <div class="form-group">
+                    <label style="font-family: 'Satoshi Variable',sans-serif; color: #f9a825; font-size: 20px;" for="">TITLE</label>
+                    <input style="background-color: #777777; border-radius: 2px; color: #ffffff" type="text" name="title" id="postTitle" value="{{{ post.title }}}">
+                    <span id=" post-title-error">Message</span>
+                </div>
+                <div class="form-group">
+                    <label style="font-family: 'Satoshi Variable',sans-serif; color: #f9a825; font-size: 20px;" for="">CATEGORY</label>
+                    <select style="background-color: #777777; border-radius: 2px; color: #ffffff" name="category" id="">
+                        <option value="General">General</option>
+                        <option value="News">News</option>
+                        <option value="Story">Story</option>
+                        <option value="Hacks">Hacks</option>
+                        <option value="Technical">Technical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" value="as" name="hiddenMarkup" id="hiddenMarkup">
+                    <input type="hidden" value="as" name="hiddenMarkup2" id="hiddenMarkup2">
+                    <input type="hidden" value="{{post._id}}" name="postId">
+                    <div id="toolbar">
+                        <button type="button" id="bold" onclick="makeBold()">
+                            <i class="fas fa-bold"></i></button>
+                        <button type="button" id="increase" onclick="dopp()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button type="button" id="decrease" onclick="dop2()">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                    <div id="editor" contenteditable="true">{{{post.content}}}</div>
+                </div>
+                <div class="form-group">
+                    <button style="background-color: #f9a825" type="submit">Change Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/validate/validators.js"></script>
+<script src="/js/validate/addPost.js"></script>
+<script src="/js/rich/rich.js"></script>

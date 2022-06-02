@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/admin.css">
+{{> adminSidebarMobile}}
+<div class="main d-flex">
+    {{#if isAuthenticated}}
+    {{> adminSidebar}}
+    {{/if}}
+    <div class="bg-white container3 px-3 py-1">
+        <div class="admin-block">
+            <div class="admin-forms">
+                {{#if isAuthenticated}}
+                <h4>Feedback Form</h4>
+                <form action="/admin/feedback" method="POST">
+                    <div class="form-group btn">
+                        <textarea name="feedback"></textarea>
+                        <button class="feedbackBtn btn" id="1" type="submit">Submit</button>
+                    </div>
+                </form>
+                {{#if successMessage}}
+                <div class="form-group">
+                    <p class="success">{{successMessage}}</p>
+                </div>
+                {{/if}}
+                {{else}}
+                <h4>Feedback Form</h4>
+                <form action="/feedback" method="POST">
+                    <div class="form-group btn">
+                        <textarea name="feedbacka"></textarea>
+                        <button class="feedbackBtn btn" id="2" type="submit">Submit New User</button>
+                    </div>
+                </form>
+                {{#if successMessage}}
+                <div class="form-group">
+                    <p class="success">{{successMessage}}</p>
+                </div>
+                {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+</div>

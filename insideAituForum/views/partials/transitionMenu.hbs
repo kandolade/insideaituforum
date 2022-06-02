@@ -1,0 +1,171 @@
+<style>
+    .transition {
+        display: none;
+    }
+
+    .transition #menu {
+        left: 7px;
+        font-size: 4em;
+        font-weight: 800;
+        /* z-index: 111; */
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.5s;
+        -webkit-transition: all 0.25s;
+        position: absolute;
+    }
+
+
+    .transition ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 75px;
+    }
+
+    .transition li {
+        text-align: start;
+        text-transform: uppercase;
+        height: 20px;
+        line-height: 40px;
+        margin: 15px 0;
+        margin-left: 30px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-size: 1em;
+        letter-spacing: 0.2em;
+        transition: all 0.25s;
+    }
+
+    .transition #lgMenu {
+        width: 250px;
+        height: 100%;
+        top: 0px;
+        left: -400px;
+        overflow: hidden;
+        background-color: rgb(255, 245, 233);
+        box-shadow: 5px 5px 10px grey;
+        position: absolute;
+        z-index: 11;
+        opacity: 0;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+
+    }
+
+    .transition #exit {
+        position: absolute;
+        right: 10px;
+        padding: 0px;
+        top: -10px;
+        font-size: 4em;
+        color: #000;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+    }
+
+    .transition #exit:hover {
+        color: #FF9900;
+    }
+
+    .transition #lgMenu.enter {
+        opacity: 1;
+        left: 0;
+    }
+
+    .transition #menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+    .transition #menu span {
+        height: 5px;
+        width: 30px;
+        background: #000;
+        z-index: 10000;
+        margin-bottom: 3px;
+        border-radius: 3px;
+    }
+
+    #menu span:first-child {
+        margin-top: 7px;
+    }
+
+    @media(max-width: 500px) {
+        .transition {
+            display: block;
+        }
+    }
+</style>
+
+
+
+
+<div class="transition" id="container">
+    <div id="menu"><span></span><span></span><span></span></div>
+    <div id="lgMenu">
+        <span id="exit">&times;</span>
+        <ul>
+            <li><a class="navbar-brand mx-auto" href="/">Forum</a></li>
+            {{#if isAuthenticated }}
+            <li> <a href="/admin/profile">Profile <i class="fas fa-user"></i> </a></li>
+            <li> <a href="/logout">Logout</a></li>
+            {{else}}
+            <li> <a href="/login">Login</a></li>
+            {{/if}}
+        </ul>
+        <ul>
+            {{#if path.tags}}
+            {{#each tags}}
+            <li>#<a href="/tags/{{this}}" class="{{#if active.home}}active{{/if}}">{{this}}</a></li>
+            {{/each}}
+            {{/if}}
+
+            {{#if path.category}}
+            <li> <i class=" fas fa-user-friends"></i> <a href="/" class="{{#if active.home}}active{{/if}}">Boos</a>
+            </li>
+            <li><i class="fas fa-football-ball"></i> <a href="?category=sports"
+                    class="{{#if active.home}}active{{/if}}">Boos</a></li>
+            <li><i class="fas fa-leaf"></i> <a href="?category=botany"
+                    class="{{#if active.home}}active{{/if}}">Boos</a>
+            </li>
+            <li><i class="fas fa-fist-raised"></i> <a href="?category=politics"
+                    class="{{#if active.home}}active{{/if}}">Boos</a></li>
+            <li><i class="fas fa-landmark"></i> <a href="?category=civil"
+                    class="{{#if active.home}}active{{/if}}">Boos</a>
+            </li>
+            <li> <a style="color: brown;" href="/tags">View All Tags</a></li>
+            {{/if}}
+
+            {{#if path.admin}}
+            <li><a href="/admin/profile" class="{{#if active.profile}}active{{/if}}">Profile</a></li>
+            <li><a href="/admin/posts" class="{{#if active.myposts}}active{{/if}}">Questions</a></li>
+            <li><a href="/admin/add" class="{{#if active.add}}active{{/if}}">Add Post</a></li>
+            <li><a href="/follow/posts" class="{{#if active.follow}}active{{/if}}">Followed</a></li>
+            {{/if}}
+        </ul>
+
+
+    </div>
+
+    <script>
+
+
+        let menu = document.getElementById("menu");
+        let lgMenu = document.getElementById("lgMenu");
+        let exit = document.getElementById("exit");
+
+        menu.addEventListener("click", (e) => {
+            menu.style.opacity = "0";
+            lgMenu.className = "enter";
+        })
+        exit.addEventListener("click", (e) => {
+            lgMenu.classList.remove("enter");
+            menu.style.opacity = "1";
+        })
+
+
+    </script>
+   </div>

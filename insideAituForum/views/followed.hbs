@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/Post.css">
+
+<div class="main d-flex">
+    {{> adminSidebar}}
+    <div class="bg-white container3 px-3 py-1">
+        <div class="adminPosts ex">
+            {{#if posts}}
+            <hr>
+            {{#each posts}}
+            <div class="post">
+                <p class="title">{{this.author}}</p>
+                <a href="/fullpost/{{this.id}}">
+                    <p>{{this.title}}</p>
+                </a>
+            </div>
+            <hr>
+            {{/each}}
+            {{else}}
+            <h2>No Posts Found</h2>
+            {{/if}}
+        </div>
+    </div>
+</div>

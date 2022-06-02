@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="/css/recommend.css">
+<div style="display: none" class="recommendResponsive">
+    <h4 style="font-weight: bold;">Related Posts</h4>
+    {{#each recommended}}
+    <li><a href="/fullpost/{{this._id}}">{{this.title}}</a></li>
+    {{/each}}
+</div>

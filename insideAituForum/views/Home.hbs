@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/Post.css">
+<div class="intro"></div>
+
+<div class="main d-flex">
+
+
+
+  {{> sidebar}}
+  <div style="background-color: #121212" class="container">
+      <div class="adminPosts">
+          <div style="padding-left: 15px;padding-right: 15px" class="row features">
+
+          <div style="background-color: #3E3E3E;width:74.5%;" class=" rectangle__top" data-filter="news">
+              <div class="title_inside_in_dev">
+                      <p style="font-weight: bold; color: white; font-size: 24px; padding-top: 5px">Tags</p>
+                      {{#each tags}}
+                          <p>#<a href="/tags/{{this}}" class="{{#if active.home}}active{{/if}}">{{this}}</a></p>
+                      {{/each}}
+              </div>
+
+          </div>
+          <div style="background-color: #f9a825" class=" rectangle__top" data-filter="news">
+              <div class="title_inside_in_dev">
+                  <a style="color: #121212; font-size: 20px; font-weight: bold" href="/admin/add">Ask Question</a>
+              </div>
+
+          </div>
+          </div>
+          {{#if posts}}
+        {{#each posts}}
+            <a href="/fullpost/{{this._id}}" class="row rectangle news">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-1 container__picture">
+                            <img  class="container__picture__pop" src="{{this.userImage}}" alt="user">
+                        </div>
+                        <div class="col-9 container__text__inside">
+                            <p style="font-weight: bold" class="topic__problem">{{this.title}}</p>
+                        </div>
+                        <div class="col-2 container__time">
+                            <div class="sokial" style="display: flex; ">
+                                <p style="color: #cecece">Views: </i> {{this.views}}</p>
+
+                                <p  style="color: #cecece">Likes: </i>{{this.likes}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {{/each}}
+        {{else}}
+        <h2>No Posts Found</h2>
+        {{/if}}
+      </div>
+  </div>
+</div>
